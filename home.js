@@ -1,9 +1,3 @@
-$(".background_video-wrapper").ripples({
-  resolution: 512,
-  dropRadius: 20,
-  perturbance: 0.01,
-});
-
 gsap.from(".navbar-header_link", {
   opacity: 0,
   duration: 1,
