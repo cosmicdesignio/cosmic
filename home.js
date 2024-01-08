@@ -110,27 +110,3 @@ function changeText() {
 
 // Initial animation trigger
 changeText();
-
-
-// Function to handle the scroll event
-function handleScroll() {
-  let lastScroll = 0;
-  const navbar = document.querySelector('.main_navbar');
-
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > lastScroll) {
-      // Scrolling down
-      gsap.to(navbar, { y: '-10rem', duration: 0.5 });
-    } else {
-      // Scrolling up
-      gsap.to(navbar, { y: '0', duration: 0.5 });
-    }
-
-    lastScroll = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
-  });
-}
-
-// Call the function to initiate the scroll event listener
-handleScroll();
