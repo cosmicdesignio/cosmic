@@ -36,7 +36,7 @@ gsap.from(".heading-text", {
   stagger: 0.25,
 });
 
-gsap.from(".background_video-wrapper", {
+gsap.from(".background-video", {
   borderRadius: "10vw",
   duration: 5,
   delay: 0,
