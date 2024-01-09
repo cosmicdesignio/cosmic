@@ -1,3 +1,22 @@
+//navbar reveal on scroll
+const showAnim = gsap
+  .from(".main_navbar", {
+    yPercent: -100,
+    paused: true,
+    duration: 0.2,
+  })
+  .progress(1);
+
+ScrollTrigger.create({
+  start: "top top",
+  end: 99999,
+  onUpdate: (self) => {
+    self.direction === -1 ? showAnim.play() : showAnim.reverse();
+  },
+});
+//end of navbar reveal on scroll
+
+//navbar element animation
 gsap.from(".navbar-header_link", {
   opacity: 0,
   duration: 1,
@@ -10,7 +29,9 @@ gsap.from(".link", {
   stagger: 0.25,
   ease: "power4.in",
 });
+//end of navbar element animation
 
+//hero section animation
 gsap.from("#hero-para", {
   opacity: 0,
   y: 4,
@@ -42,6 +63,8 @@ gsap.from(".background-video", {
   delay: 0,
   ease: "power4.out",
 });
+
+//end of hero section animation
 
 const firstText = document.querySelector(".heading_first-text");
 const secondText = document.querySelector(".heading_second-text");
@@ -110,21 +133,3 @@ function changeText() {
 
 // Initial animation trigger
 changeText();
-
-//navbar reveal on scroll
-
-const showAnim = gsap
-  .from(".main_navbar", {
-    yPercent: -100,
-    paused: true,
-    duration: 0.2,
-  })
-  .progress(1);
-
-ScrollTrigger.create({
-  start: "top top",
-  end: 99999,
-  onUpdate: (self) => {
-    self.direction === -1 ? showAnim.play() : showAnim.reverse();
-  },
-});
