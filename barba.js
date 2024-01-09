@@ -1,7 +1,9 @@
-const animationEnter = () => {
+const animationEnter = (container) => {
   let tl = gsap.timeline();
   tl.fromTo(
-    ["#hero-heading-1", "#hero-heading-2", "#hero-heading-3"],
+    container.querySelectorAll(
+      "#hero-heading-1, #hero-heading-2, #hero-heading-3",
+    ),
     {
       opacity: 0,
     },
@@ -13,12 +15,17 @@ const animationEnter = () => {
   return tl;
 };
 
-const animationLeave = () => {
+const animationLeave = (container) => {
   let tl = gsap.timeline();
-  tl.to(["#hero-heading-1", "#hero-heading-2", "#hero-heading-3"], {
-    opacity: 0,
-    duration: 1,
-  });
+  tl.to(
+    container.querySelectorAll(
+      "#hero-heading-1, #hero-heading-2, #hero-heading-3",
+    ),
+    {
+      opacity: 0,
+      duration: 1,
+    },
+  );
   return tl;
 };
 
@@ -32,11 +39,14 @@ barba.init({
       },
       leave: ({ current }) => animationLeave(current.container),
       enter({ next }) {
-        animationEnter(next.container);
+        animationEnter(next.container).then(() => {
+          this.async();
+        });
       },
       once({ next }) {
-        animationEnter(next.container);
-      },
+        animationEnter(next.container).then(() => {
+          this.async();
+        });
     },
     {
       name: "animation services",
@@ -45,11 +55,15 @@ barba.init({
       },
       leave: ({ current }) => animationLeave(current.container),
       enter({ next }) {
-        animationEnter(next.container);
+        animationEnter(next.container).then(() => {
+          this.async();
+        });
       },
       once({ next }) {
-        animationEnter(next.container);
-      },
+        animationEnter(next.container).then(() => {
+          this.async();
+        });
+      },      
     },
     {
       name: "animation culture",
@@ -58,11 +72,15 @@ barba.init({
       },
       leave: ({ current }) => animationLeave(current.container),
       enter({ next }) {
-        animationEnter(next.container);
+        animationEnter(next.container).then(() => {
+          this.async();
+        });
       },
       once({ next }) {
-        animationEnter(next.container);
-      },
+        animationEnter(next.container).then(() => {
+          this.async();
+        });
+      },      
     },
     {
       name: "animation journal",
