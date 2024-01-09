@@ -66,14 +66,19 @@ gsap.from(".background-video", {
 
 //end of hero section animation
 
+//second section animation text
+
 const firstText = document.querySelector(".heading_first-text");
 const secondText = document.querySelector(".heading_second-text");
-const textsFirst = ["First Copy", "Second Copy", "Third Copy", "Fourth Copy"];
+const textsFirst = [
+  "Lovable Products ",
+  "Branded Experiences ",
+  "Digital Innovation ",
+];
 const textsSecond = [
-  "Second First Copy",
-  "Second Second Copy",
-  "Second Third Copy",
-  "Second Fourth Copy",
+  "from vision to launch",
+  "that grow your business",
+  "to seize opportunities",
 ];
 
 let currentIndexFirst = 0;
@@ -133,3 +138,5 @@ function changeText() {
 
 // Initial animation trigger
 changeText();
+
+//End of second section animation text
