@@ -56,9 +56,3 @@
   overflow: hidden;
   border-radius: 0.25vw;
 }
-
-#hero-heading-1,
-#hero-heading-2,
-#hero-heading-3 {
-  opacity: 0;
-}
