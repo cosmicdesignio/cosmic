@@ -91,7 +91,7 @@ function changeText() {
       ease: "power2.inOut",
       stagger: 0.05,
     },
-    "-=1.5"
+    "-=1.5",
   ); // Start the second text animation slightly before the first one ends
 
   tl.to([charsToAnimateFirst, charsToAnimateSecond], {
@@ -111,16 +111,20 @@ function changeText() {
 // Initial animation trigger
 changeText();
 
-const showAnim = gsap.from('.main_navbar', { 
-  yPercent: -100,
-  paused: true,
-  duration: 0.2
-}).progress(1);
+//navbar reveal on scroll
+
+const showAnim = gsap
+  .from(".main_navbar", {
+    yPercent: -100,
+    paused: true,
+    duration: 0.2,
+  })
+  .progress(1);
 
 ScrollTrigger.create({
   start: "top top",
   end: 99999,
   onUpdate: (self) => {
-    self.direction === -1 ? showAnim.play() : showAnim.reverse()
-  }
+    self.direction === -1 ? showAnim.play() : showAnim.reverse();
+  },
 });
