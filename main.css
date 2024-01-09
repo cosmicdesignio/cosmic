@@ -1,0 +1,58 @@
+.footer-link,
+.link {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.footer-link::before,
+.link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.1)
+  );
+  transition: all 1.5s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.footer-link:hover::before,
+.link:hover::before {
+  left: 100%;
+}
+
+.div-block-2 {
+  height: 2px;
+  transition: width 0.3s ease; /* Transition effect */
+}
+
+/* Animation on hover */
+.silent_collection-heading-content:hover .div-block-2,
+.collection_link:hover .div-block-2 {
+  width: 2.5vw; /* Width change on hover */
+}
+
+.icon-embed-xsmall {
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease; /* Transition effect for smooth movement */
+}
+
+.is-link:hover .icon-embed-xsmall {
+  transform: translateX(20%); /* Move the element to the right */
+}
+
+.background_video-wrapper {
+  overflow: hidden;
+  border-radius: 0.25vw;
+}
