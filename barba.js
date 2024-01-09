@@ -29,8 +29,7 @@ const animationOneLeave = (container) => {
 
 // ONCE
 const animationOnce = (container) => {
-  const headingChars = container.querySelectorAll("h1 .char");
-  const newPara = container.querySelector("p");
+  const headingChars = container.querySelectorAll("h1");
 
   let tl = gsap.timeline();
   tl.from(headingChars, {
@@ -44,36 +43,28 @@ const animationOnce = (container) => {
 
 // ENTER FIRST
 const animationTwoEnter = (container) => {
-  const typeSplit = new SplitType("h1", {
-    types: "words, chars",
-    tagName: "span",
-  });
-
-  const headingChars = container.querySelectorAll("h1 .char");
-
   let tl = gsap.timeline();
-  tl.from(headingChars, {
-    yPercent: 100,
-    opacity: 0,
-    stagger: { each: 0.1, duration: 0.3, ease: "power2.in" },
-  });
-  tl.from(container, { opacity: 0, duration: 0.7 }, 0);
-
+  tl.fromTo(
+    container,
+    {
+      xPercent: 100,
+      opacity: 0,
+    },
+    {
+      xPercent: 0,
+      opacity: 1,
+    },
+  );
   return tl;
 };
 
 // LEAVE FIRST
 const animationTwoLeave = (container) => {
-  const headingChars = container.querySelectorAll("h1 .char");
-
   let tl = gsap.timeline();
-  tl.to(headingChars, {
-    yPercent: -100,
+  tl.to(container, {
+    xPercent: -100,
     opacity: 0,
-    stagger: { each: 0.1, duration: 0.3, ease: "power2.in" },
-    duration: 0.4,
   });
-  tl.to(container, { opacity: 0, duration: 0.3 }, 0.4);
   return tl;
 };
 
