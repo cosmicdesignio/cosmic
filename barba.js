@@ -1,15 +1,13 @@
 const animationEnter = (container) => {
   let tl = gsap.timeline();
   tl.fromTo(
-    container.querySelectorAll(
-      "#hero-heading-1, #hero-heading-2, #hero-heading-3",
-    ),
+    container,
     {
       opacity: 0,
     },
     {
       opacity: 1,
-      duration: 2,
+      duration: 5,
     },
   );
   return tl;
@@ -17,15 +15,10 @@ const animationEnter = (container) => {
 
 const animationLeave = (container) => {
   let tl = gsap.timeline();
-  tl.to(
-    container.querySelectorAll(
-      "#hero-heading-1, #hero-heading-2, #hero-heading-3",
-    ),
-    {
-      opacity: 0,
-      duration: 1,
-    },
-  );
+  tl.to(container, {
+    opacity: 0,
+    duration: 5,
+  });
   return tl;
 };
 
