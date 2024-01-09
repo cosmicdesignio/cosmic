@@ -140,3 +140,23 @@ function changeText() {
 changeText();
 
 //End of second section animation text
+
+//Barba JS start here
+
+barba.init({
+  transitions: [
+    {
+      name: "test-transition",
+      leave(data) {
+        return gsap.to(data.current.container, {
+          opacity: 0,
+        });
+      },
+      enter(data) {
+        return gsap.from(data.next.container, {
+          opacity: 0,
+        });
+      },
+    },
+  ],
+});
