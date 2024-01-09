@@ -47,6 +47,7 @@ barba.init({
         animationEnter(next.container).then(() => {
           this.async();
         });
+      },
     },
     {
       name: "animation services",
@@ -63,7 +64,7 @@ barba.init({
         animationEnter(next.container).then(() => {
           this.async();
         });
-      },      
+      },
     },
     {
       name: "animation culture",
@@ -80,7 +81,7 @@ barba.init({
         animationEnter(next.container).then(() => {
           this.async();
         });
-      },      
+      },
     },
     {
       name: "animation journal",
