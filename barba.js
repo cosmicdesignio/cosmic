@@ -1,21 +1,24 @@
-const animationEnter = (container) => {
+const animationEnter = () => {
   let tl = gsap.timeline();
   tl.fromTo(
-    container,
+    ["#hero-heading-1", "#hero-heading-2", "#hero-heading-3"],
     {
       opacity: 0,
     },
     {
       opacity: 1,
-      duration: 1,
+      duration: 2,
     },
   );
   return tl;
 };
 
-const animationLeave = (container) => {
+const animationLeave = () => {
   let tl = gsap.timeline();
-  tl.to(container, { opacity: 0, duration: 1 });
+  tl.to(["#hero-heading-1", "#hero-heading-2", "#hero-heading-3"], {
+    opacity: 0,
+    duration: 1,
+  });
   return tl;
 };
 
