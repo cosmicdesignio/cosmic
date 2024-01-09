@@ -27,11 +27,6 @@ const animationOneLeave = (container) => {
   return tl;
 };
 
-const typeSplit = new SplitType("h1", {
-  types: "words, chars",
-  tagName: "span",
-});
-
 // ONCE
 const animationOnce = (container) => {
   const headingChars = container.querySelectorAll("h1 .char");
@@ -119,7 +114,7 @@ barba.init({
     {
       name: "Animation One",
       to: {
-        namespace: ["animationOne"],
+        namespace: ["services"],
       },
       leave: ({ current }) => animationOneLeave(current.container),
 
@@ -133,7 +128,7 @@ barba.init({
     {
       name: "Animation Two",
       to: {
-        namespace: ["animationTwo"],
+        namespace: ["culture"],
       },
       leave: ({ current }) => animationTwoLeave(current.container),
 
@@ -149,7 +144,7 @@ barba.init({
     {
       name: "Animation Three",
       to: {
-        namespace: ["animationThree"],
+        namespace: ["journal"],
       },
       leave: ({ current }) => animationThreeLeave(current.container),
 
@@ -165,7 +160,7 @@ barba.init({
     {
       name: "Animation Four",
       to: {
-        namespace: ["animationFour"],
+        namespace: ["home"],
       },
       once({ next }) {
         console.log("once");
