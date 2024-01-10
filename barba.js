@@ -26,6 +26,7 @@ barba.init({
   preventRunning: true,
   transition: [
     {
+      sync: true,
       name: "animation work",
       to: {
         namespace: ["home"],
@@ -43,6 +44,7 @@ barba.init({
       },
     },
     {
+      sync: true,
       name: "animation services",
       to: {
         namespace: ["services"],
@@ -60,6 +62,7 @@ barba.init({
       },
     },
     {
+      sync: true,
       name: "animation culture",
       to: {
         namespace: ["culture"],
@@ -77,6 +80,7 @@ barba.init({
       },
     },
     {
+      sync: true,
       name: "animation journal",
       to: {
         namespace: ["journal"],
