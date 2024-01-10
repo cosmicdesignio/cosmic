@@ -14,8 +14,11 @@ barba.init({
           stagger: 0.25,
           ease: "power4.in",
         });
-        gsap.to(data.current.container, { opacity: 0, duration: 0.5 });
-        return gsap.to(data.current.container, { opacity: 0, duration: 0.5 });
+        gsap.to(data.current.container, {
+          opacity: 0,
+          delay: 2,
+          duration: 0.5,
+        });
       },
       enter(data) {
         // Add your animation timeline using GSAP here
