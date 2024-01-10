@@ -5,9 +5,7 @@ barba.init({
       leave(data) {
         // Add your animation timeline using GSAP here
         gsap.to(data.current.container, { opacity: 0, duration: 0.5 });
-        return gsap
-          .to(data.current.container, { opacity: 0, duration: 0.5 })
-          .then(() => data.current.container.remove());
+        return gsap.to(data.current.container, { opacity: 0, duration: 0.5 });
       },
       enter(data) {
         // Add your animation timeline using GSAP here
