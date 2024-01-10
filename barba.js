@@ -1,7 +1,3 @@
-if ("scrollRestoration" in history) {
-  history.scrollRestoration = "manual";
-}
-
 barba.init({
   transitions: [
     {
@@ -12,6 +8,9 @@ barba.init({
         return gsap.to(data.current.container, { opacity: 0, duration: 0.5 });
       },
       enter(data) {
+        if ("scrollRestoration" in history) {
+          history.scrollRestoration = "manual";
+        }
         // Add your animation timeline using GSAP here
         gsap.from(data.next.container, { opacity: 0, duration: 0.5 });
       },
