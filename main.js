@@ -134,6 +134,7 @@ function changeText() {
   tl.to([charsToAnimateFirst, charsToAnimateSecond], {
     duration: 1,
     opacity: 0,
+    filter: "blur(24px)",
     ease: "power2.inOut",
     stagger: 0.025,
   }); // Fade out both texts after a short overlap
