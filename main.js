@@ -60,7 +60,7 @@ gsap.from(".background_video-wrapper", {
 gsap.from(".heading-text", {
   opacity: 0,
   ease: "power4.inOut",
-  filter: "blur(14px) contrast(20)",
+  filter: "blur(24px)",
   duration: 2,
   delay: 0,
   stagger: 0.25,
