@@ -60,21 +60,10 @@ gsap.from(".background_video-wrapper", {
 gsap.from(".heading-text", {
   opacity: 0,
   ease: "power4.inOut",
+  filter: "blur(14px) contrast(20)",
   duration: 2,
   delay: 0,
   stagger: 0.25,
-  onStart: function () {
-    // Set initial styles (e.g., filter effect)
-    gsap.set(".heading-text", {
-      filter: "blur(14px) contrast(20)",
-    });
-  },
-  onComplete: function () {
-    // Remove filter effect when the animation is complete
-    gsap.set(".heading-text", {
-      filter: "none",
-    });
-  },
 });
 
 gsap.from(".background-video", {
