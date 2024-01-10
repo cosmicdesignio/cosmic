@@ -116,7 +116,6 @@ function changeText() {
   tl.to(charsToAnimateFirst, {
     duration: 1.5,
     opacity: 1,
-    filter: "blur(24px)",
     ease: "power2.inOut",
     stagger: 0.05,
   });
@@ -126,7 +125,6 @@ function changeText() {
     {
       duration: 1.5,
       opacity: 1,
-      filter: "blur(24px)",
       ease: "power2.inOut",
       stagger: 0.05,
     },
