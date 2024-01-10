@@ -4,7 +4,6 @@ barba.init({
       name: "fade-transition",
       leave(data) {
         const tl = gsap.timeline();
-
         tl.to(".navbar-header_link", {
           opacity: 0,
           duration: 1,
@@ -25,13 +24,13 @@ barba.init({
       enter(data) {
         const tl = gsap.timeline();
 
-        tl.from(".navbar-header_link", {
-          opacity: 0,
+        tl.to(".navbar-header_link", {
+          opacity: 1,
           duration: 1,
           ease: "power4.in",
         });
-        tl.from(".link", {
-          opacity: 0,
+        tl.to(".link", {
+          opacity: 1,
           duration: 1,
           stagger: 0.25,
           ease: "power4.in",
