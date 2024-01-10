@@ -1,3 +1,7 @@
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
 barba.init({
   transitions: [
     {
