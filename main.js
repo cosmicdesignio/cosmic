@@ -140,3 +140,15 @@ function changeText() {
 changeText();
 
 //End of second section animation text
+
+var text = new Blotter.Text("Design", {});
+
+var material = new Blotter.LiquidDistortMaterial();
+material.uniforms.uSpeed.value = 0.5;
+
+var blotter = new Blotter(material, {
+  texts: text,
+});
+
+var scope = blotter.forText(text);
+scope.appendTo(document.querySelector("#heading-text-1"));
