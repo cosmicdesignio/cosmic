@@ -49,12 +49,32 @@ gsap.from(".background_video-wrapper", {
   ease: "power4.out",
 });
 
+/*gsap.from(".heading-text", {
+  opacity: 0,
+  ease: "power4.inOut",
+  duration: 2,
+  delay: 0,
+  stagger: 0.25,
+});*/
+
 gsap.from(".heading-text", {
   opacity: 0,
   ease: "power4.inOut",
   duration: 2,
   delay: 0,
   stagger: 0.25,
+  onStart: function () {
+    // Set initial styles (e.g., filter effect)
+    gsap.set(".heading-text", {
+      filter: "blur(14px) contrast(20)",
+    });
+  },
+  onComplete: function () {
+    // Remove filter effect when the animation is complete
+    gsap.set(".heading-text", {
+      filter: "none",
+    });
+  },
 });
 
 gsap.from(".background-video", {
@@ -140,15 +160,3 @@ function changeText() {
 changeText();
 
 //End of second section animation text
-
-var text = new Blotter.Text("Design", {});
-
-var material = new Blotter.LiquidDistortMaterial();
-material.uniforms.uSpeed.value = 0.5;
-
-var blotter = new Blotter(material, {
-  texts: text,
-});
-
-var scope = blotter.forText(text);
-scope.appendTo(document.querySelector("#heading-text-1"));
