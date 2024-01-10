@@ -132,7 +132,7 @@ function changeText() {
   ); // Start the second text animation slightly before the first one ends
 
   tl.to([charsToAnimateFirst, charsToAnimateSecond], {
-    duration: 1,
+    duration: 2,
     opacity: 0,
     filter: "blur(24px)",
     ease: "power2.inOut",
