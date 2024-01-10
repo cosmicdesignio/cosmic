@@ -3,37 +3,40 @@ barba.init({
     {
       name: "fade-transition",
       leave(data) {
-        gsap.to(".navbar-header_link", {
+        const tl = gsap.timeline();
+
+        tl.to(".navbar-header_link", {
           opacity: 0,
           duration: 1,
           ease: "power4.in",
         });
-        gsap.to(".link", {
+        tl.to(".link", {
           opacity: 0,
           duration: 1,
           stagger: 0.25,
           ease: "power4.in",
         });
-        gsap.to(data.current.container, {
+        tl.to(data.current.container, {
           opacity: 0,
           delay: 2,
           duration: 0.5,
         });
       },
       enter(data) {
-        // Add your animation timeline using GSAP here
-        gsap.from(".navbar-header_link", {
+        const tl = gsap.timeline();
+
+        tl.from(".navbar-header_link", {
           opacity: 0,
           duration: 1,
           ease: "power4.in",
         });
-        gsap.from(".link", {
+        tl.from(".link", {
           opacity: 0,
           duration: 1,
           stagger: 0.25,
           ease: "power4.in",
         });
-        gsap.from(data.next.container, { opacity: 0, duration: 0.5 });
+        tl.from(data.next.container, { opacity: 0, duration: 0.5 });
       },
     },
   ],
