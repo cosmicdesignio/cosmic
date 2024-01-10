@@ -140,8 +140,8 @@ function changeText() {
   }); // Fade out both texts after a short overlap
 
   tl.call(() => {
-    currentIndexFirst = (currentIndexFirst + 0) % textsFirst.length;
-    currentIndexSecond = (currentIndexSecond + 0) % textsSecond.length;
+    currentIndexFirst = (currentIndexFirst + 1) % textsFirst.length;
+    currentIndexSecond = (currentIndexSecond + 1) % textsSecond.length;
     changeText();
   });
 }
