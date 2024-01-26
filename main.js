@@ -1,16 +1,6 @@
-gsap.from(".navbar-header_link", {
-  opacity: 0,
-  duration: 1,
-  ease: "power4.in",
-});
 
-gsap.from(".link", {
-  opacity: 0,
-  duration: 1,
-  stagger: 0.25,
-  ease: "power4.in",
-});
 
+//hero section animation
 gsap.from("#hero-para", {
   opacity: 0,
   y: 4,
@@ -28,9 +18,18 @@ gsap.from(".background_video-wrapper", {
   ease: "power4.out",
 });
 
+/*gsap.from(".heading-text", {
+  opacity: 0,
+  ease: "power4.inOut",
+  duration: 2,
+  delay: 0,
+  stagger: 0.25,
+});*/
+
 gsap.from(".heading-text", {
   opacity: 0,
   ease: "power4.inOut",
+  filter: "blur(24px)",
   duration: 2,
   delay: 0,
   stagger: 0.25,
@@ -43,14 +42,21 @@ gsap.from(".background-video", {
   ease: "power4.out",
 });
 
+//end of hero section animation
+
+//second section animation text
+
 const firstText = document.querySelector(".heading_first-text");
 const secondText = document.querySelector(".heading_second-text");
-const textsFirst = ["First Copy", "Second Copy", "Third Copy", "Fourth Copy"];
+const textsFirst = [
+  "Lovable Products ",
+  "Branded Experiences ",
+  "Digital Innovation ",
+];
 const textsSecond = [
-  "Second First Copy",
-  "Second Second Copy",
-  "Second Third Copy",
-  "Second Fourth Copy",
+  "from vision to launch",
+  "that grow your business",
+  "to seize opportunities",
 ];
 
 let currentIndexFirst = 0;
@@ -91,12 +97,13 @@ function changeText() {
       ease: "power2.inOut",
       stagger: 0.05,
     },
-    "-=1.5"
+    "-=1.5",
   ); // Start the second text animation slightly before the first one ends
 
   tl.to([charsToAnimateFirst, charsToAnimateSecond], {
-    duration: 1,
+    duration: 2,
     opacity: 0,
+    filter: "blur(24px)",
     ease: "power2.inOut",
     stagger: 0.025,
   }); // Fade out both texts after a short overlap
@@ -111,16 +118,4 @@ function changeText() {
 // Initial animation trigger
 changeText();
 
-const showAnim = gsap.from('.main_navbar', { 
-  yPercent: -100,
-  paused: true,
-  duration: 0.2
-}).progress(1);
-
-ScrollTrigger.create({
-  start: "top top",
-  end: 99999,
-  onUpdate: (self) => {
-    self.direction === -1 ? showAnim.play() : showAnim.reverse()
-  }
-});
+//End of second section animation text
