@@ -16,20 +16,6 @@ ScrollTrigger.create({
 });
 //end of navbar reveal on scroll
 
-//navbar element animation
-gsap.from(".navbar-header_link", {
-  opacity: 0,
-  duration: 1,
-  ease: "power4.in",
-});
-
-gsap.from(".link", {
-  opacity: 0,
-  duration: 1,
-  stagger: 0.25,
-  ease: "power4.in",
-});
-//end of navbar element animation
 
 //hero section animation
 gsap.from("#hero-para", {
